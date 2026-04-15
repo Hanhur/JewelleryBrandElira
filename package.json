@@ -1,0 +1,29 @@
+{
+    "name": "jewellerybrandelira",
+    "version": "1.0.0",
+    "description": "",
+    "homepage": "https://github.com/Hanhur/JewelleryBrandElira#readme",
+    "bugs": {
+        "url": "https://github.com/Hanhur/JewelleryBrandElira/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Hanhur/JewelleryBrandElira.git"
+    },
+    "license": "ISC",
+    "author": "Vladimir Hanhur",
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "start": "parcel ./*.html",
+        "predeploy": "parcel build ./*.html --public-url /JewelleryBrandElira/",
+        "deploy": "gh-pages -d dist"
+    },
+    "devDependencies": {
+        "gh-pages": "^6.1.1",
+        "parcel-bundler": "^1.12.5"
+    },
+    "dependencies": {
+        "navigo": "^8.11.1"
+    }
+}
