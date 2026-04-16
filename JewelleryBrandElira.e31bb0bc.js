@@ -217,7 +217,33 @@ function getHeader() {
   container.className = "container";
   var nav = document.createElement("div");
   nav.className = "navigation";
-  nav.innerHTML = "\n        <nav class=\"nav\">\n            <ul class=\"header-list\">\n                <li class=\"header-item\">\n                    <a href=\"".concat((0, _navigationLink.getNavigationLink)("/", "Home"), "\" class=\"header-link\">Home</a>\n                </li>\n                <li class=\"header-item\">\n                    <a href=\"").concat((0, _navigationLink.getNavigationLink)("/about", "About"), "\" class=\"header-link\">About</a>\n                </li>\n                <li class=\"header-item\">\n                    <a href=\"").concat((0, _navigationLink.getNavigationLink)("/coupons", "Gift Coupons"), "\" class=\"header-link\">Gift Coupons</a>\n                </li>\n                <li class=\"header-item\">\n                    <a href=\"").concat((0, _navigationLink.getNavigationLink)("/stores", "Stores"), "\" class=\"header-link\">Stores</a>\n                </li>\n            </ul>\n            <ul class=\"nav-list\">\n                <li class=\"nav-item\">\n                    <a href=\"").concat((0, _navigationLink.getNavigationLink)("/connect", "Connect"), "\" class=\"nav-link\">Connect</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a href=\"").concat((0, _navigationLink.getNavigationLink)("/sign", "Sign In"), "\" class=\"nav-link\">Sign In</a>\n                </li>\n            </ul>\n        </nav>\n    ");
+  // nav.innerHTML = `
+  //     <nav class="nav">
+  //         <ul class="header-list">
+  //             <li class="header-item">
+  //                 <a href="${getNavigationLink("/", "Home")}" class="header-link">Home</a>
+  //             </li>
+  //             <li class="header-item">
+  //                 <a href="${getNavigationLink("/about", "About")}" class="header-link">About</a>
+  //             </li>
+  //             <li class="header-item">
+  //                 <a href="${getNavigationLink("/coupons", "Gift Coupons")}" class="header-link">Gift Coupons</a>
+  //             </li>
+  //             <li class="header-item">
+  //                 <a href="${getNavigationLink("/stores", "Stores")}" class="header-link">Stores</a>
+  //             </li>
+  //         </ul>
+  //         <ul class="nav-list">
+  //             <li class="nav-item">
+  //                 <a href="${getNavigationLink("/connect", "Connect")}" class="nav-link">Connect</a>
+  //             </li>
+  //             <li class="nav-item">
+  //                 <a href="${getNavigationLink("/sign", "Sign In")}" class="nav-link">Sign In</a>
+  //             </li>
+  //         </ul>
+  //     </nav>
+  // `;
+
   var links = {
     "home": (0, _navigationLink.getNavigationLink)("/", "Home"),
     "about": (0, _navigationLink.getNavigationLink)("/about", "About"),
@@ -274,7 +300,7 @@ function getMainPage() {
   container.className = "container";
   var innerMain = document.createElement("div");
   innerMain.className = "inner-main";
-  innerMain.innerHTML = "\n        <div class=\"inner\">\n            <div class=\"content\">\n                <img class=\"content-img\" src=\"".concat(_headerImg.default, "\" alt=\"\">\n                <img class=\"content-img\" src=\"").concat(_headerImg2.default, "\" alt=\"\">\n                <div class=\"content-box\">\n                    <h1 class=\"content-title\">E L I R A</h1>\n                    <p class=\"content-text\">We add elegance to your freedom</p>\n                    <button class=\"content-box-btn\" type=\"button\">\n                        Shop Now\n                        <img src=\"").concat(_bag.default, "\" alt=\"\" width=\"30\">\n                    </button>\n                </div>\n            </div>\n        </div>\n    ");
+  innerMain.innerHTML = "\n        <div class=\"main-inner\">\n            <div class=\"content\">\n                <img class=\"content-img\" src=\"".concat(_headerImg.default, "\" alt=\"\">\n                <img class=\"content-img\" src=\"").concat(_headerImg2.default, "\" alt=\"\">\n                <div class=\"content-box\">\n                    <h1 class=\"content-title\">E L I R A</h1>\n                    <p class=\"content-text\">We add elegance to your freedom</p>\n                    <button class=\"content-box-btn\" type=\"button\">\n                        Shop Now\n                        <img src=\"").concat(_bag.default, "\" alt=\"\" width=\"30\">\n                    </button>\n                </div>\n            </div>\n        </div>\n    ");
   main.append(container);
   container.append(innerMain);
   return main;
@@ -427,7 +453,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54069" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54298" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
