@@ -219,12 +219,12 @@ function getHeader() {
   nav.className = "navigation";
   nav.innerHTML = "\n        <nav class=\"nav\">\n            <ul class=\"header-list\">\n                <li class=\"header-item\">\n                    <a href=\"".concat((0, _navigationLink.getNavigationLink)("/", "Home"), "\" class=\"header-link\">Home</a>\n                </li>\n                <li class=\"header-item\">\n                    <a href=\"").concat((0, _navigationLink.getNavigationLink)("/about", "About"), "\" class=\"header-link\">About</a>\n                </li>\n                <li class=\"header-item\">\n                    <a href=\"").concat((0, _navigationLink.getNavigationLink)("/coupons", "Gift Coupons"), "\" class=\"header-link\">Gift Coupons</a>\n                </li>\n                <li class=\"header-item\">\n                    <a href=\"").concat((0, _navigationLink.getNavigationLink)("/stores", "Stores"), "\" class=\"header-link\">Stores</a>\n                </li>\n            </ul>\n            <ul class=\"nav-list\">\n                <li class=\"nav-item\">\n                    <a href=\"").concat((0, _navigationLink.getNavigationLink)("/connect", "Connect"), "\" class=\"nav-link\">Connect</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a href=\"").concat((0, _navigationLink.getNavigationLink)("/sign", "Sign In"), "\" class=\"nav-link\">Sign In</a>\n                </li>\n            </ul>\n        </nav>\n    ");
   var links = {
-    "home": (0, _navigationLink.getNavigationLink)("/"),
-    "about": (0, _navigationLink.getNavigationLink)("/about"),
-    "coupons": (0, _navigationLink.getNavigationLink)("/coupons"),
-    "stores": (0, _navigationLink.getNavigationLink)("/stores"),
-    "connect": (0, _navigationLink.getNavigationLink)("/connect"),
-    "sign": (0, _navigationLink.getNavigationLink)("/sign")
+    "home": (0, _navigationLink.getNavigationLink)("/", "Home"),
+    "about": (0, _navigationLink.getNavigationLink)("/about", "About"),
+    "coupons": (0, _navigationLink.getNavigationLink)("/coupons", "Gift Coupons"),
+    "stores": (0, _navigationLink.getNavigationLink)("/stores", "Stores"),
+    "connect": (0, _navigationLink.getNavigationLink)("/connect", "Connect"),
+    "sign": (0, _navigationLink.getNavigationLink)("/sign", "Sign In")
   };
   for (var oneLink in links) {
     nav.append(links[oneLink]);
@@ -427,7 +427,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50371" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54069" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
