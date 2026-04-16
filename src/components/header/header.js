@@ -1,74 +1,80 @@
 import { getNavigationLink } from "../navigation/navigationLink";
-import "./haeder.css";
+import "./header.css";
 
-export function getHeader()
-{
+export function getHeader() {
     const header = document.createElement("header");
     header.className = "header";
 
     const container = document.createElement("div");
     container.className = "container";
-   
+    
     const nav = document.createElement("div");
     nav.className = "navigation";
-    // nav.innerHTML = `
-    //     <nav class="nav">
-    //         <ul class="header-list">
-    //             <li class="header-item">
-    //                 <a href="${getNavigationLink("/", "Home")}" class="header-link">Home</a>
-    //             </li>
-    //             <li class="header-item">
-    //                 <a href="${getNavigationLink("/about", "About")}" class="header-link">About</a>
-    //             </li>
-    //             <li class="header-item">
-    //                 <a href="${getNavigationLink("/coupons", "Gift Coupons")}" class="header-link">Gift Coupons</a>
-    //             </li>
-    //             <li class="header-item">
-    //                 <a href="${getNavigationLink("/stores", "Stores")}" class="header-link">Stores</a>
-    //             </li>
-    //         </ul>
-    //         <ul class="nav-list">
-    //             <li class="nav-item">
-    //                 <a href="${getNavigationLink("/connect", "Connect")}" class="nav-link">Connect</a>
-    //             </li>
-    //             <li class="nav-item">
-    //                 <a href="${getNavigationLink("/sign", "Sign In")}" class="nav-link">Sign In</a>
-    //             </li>
-    //         </ul>
-    //     </nav>
-    // `;
 
-    const links = {
-        "home": getNavigationLink("/", "Home"),
-        "about": getNavigationLink("/about", "About"),
-        "coupons": getNavigationLink("/coupons", "Gift Coupons"),
-        "stores": getNavigationLink("/stores", "Stores"),
-        "connect": getNavigationLink("/connect", "Connect"),
-        "sign": getNavigationLink("/sign", "Sign In")
-    }
+    // Конфигурация навигационных пунктов
+    const navItems = {
+        main: [
+            { id: "home", path: "/", text: "Home" },
+            { id: "about", path: "/about", text: "About" },
+            { id: "coupons", path: "/coupons", text: "Gift Coupons" },
+            { id: "stores", path: "/stores", text: "Stores" }
+        ],
+        secondary: [
+            { id: "connect", path: "/connect", text: "Connect" },
+            { id: "sign", path: "/sign", text: "Sign In" }
+        ]
+    };
 
-    for (const oneLink in links) 
-    {
-        nav.append(links[oneLink]);
-    }
+    // Функция создания списка ссылок
+    const createNavList = (items, className) => {
+        const ul = document.createElement("ul");
+        ul.className = className;
+        
+        items.forEach(item => {
+            const li = document.createElement("li");
+            li.className = `${className.slice(0, -3)}-item`; 
+            
+            const link = getNavigationLink(item.path, item.text);
+            link.className = `${className.slice(0, -3)}-link`;
+            link.dataset.navId = item.id;
+            
+            li.appendChild(link);
+            ul.appendChild(li);
+        });
+        
+        return ul;
+    };
+
+    const mainNavList = createNavList(navItems.main, "header-list");
+    const secondaryNavList = createNavList(navItems.secondary, "nav-list");
     
-    const setActiveLink = function (link = "") 
-    {
-        for (const oneLink in links) 
-        {
-            links[oneLink].classList.remove("active");
-        }
-        if (link !== "") 
-        {
-            links[link].classList.add("active");
-        }
-    }
+    const navElement = document.createElement("nav");
+    navElement.className = "nav";
+    navElement.appendChild(mainNavList);
+    navElement.appendChild(secondaryNavList);
+    nav.appendChild(navElement);
 
-    header.append(container);
-    container.append(nav);
+    // Собираем все ссылки в объект для удобного доступа
+    const links = {};
+    document.querySelectorAll('[data-nav-id]').forEach(link => {
+        links[link.dataset.navId] = link;
+    });
+
+    const setActiveLink = (linkId = "") => {
+        Object.values(links).forEach(link => {
+            link.classList.remove("active");
+        });
+        
+        if (linkId && links[linkId]) {
+            links[linkId].classList.add("active");
+        }
+    };
+
+    header.appendChild(container);
+    container.appendChild(nav);
 
     return {
         header,
         setActiveLink
-    }
+    };
 }

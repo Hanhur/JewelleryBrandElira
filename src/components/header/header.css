@@ -1,0 +1,59 @@
+/* Reset and base styles */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 45px;
+    background-color: var(--color-header);
+}
+
+/* Navigation lists */
+.header-list,
+.nav-list {
+    display: flex;
+    gap: 0 45px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* List items */
+.header-item,
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+/* Links */
+.header-link,
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+    padding: 8px 0;
+}
+
+/* Hover effects */
+.header-link:hover,
+.nav-link:hover {
+    color: var(--color-primary, #007bff);
+}
+
+/* Active link styles */
+.header-link.active,
+.nav-link.active {
+    color: var(--color-primary, #007bff);
+    font-weight: 600;
+    position: relative;
+}
+
+/* Optional: Add underline for active links */
+.header-link.active::after,
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary, #007bff);
+}
