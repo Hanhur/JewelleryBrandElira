@@ -43,6 +43,14 @@ router.on("/stores", async () => {
     header.setActiveLink("stores");
 });
 
+router.on("/connect", async () => {
+    main.innerHTML = "";
+    const moduleConnect = await import("./src/pages/connectPage/connectPage.js");
+    const pageConnect = moduleConnect.getConnectPage();
+    main.append(pageConnect);
+    header.setActiveLink("connect");
+});
+
 
 router.resolve();
 
