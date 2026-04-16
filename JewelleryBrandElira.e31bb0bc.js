@@ -197,7 +197,7 @@ function getNavigationLink(path) {
   });
   return link;
 }
-},{"../../../index":"index.js","./navigationLink.css":"src/components/navigation/navigationLink.css"}],"src/components/header/haeder.css":[function(require,module,exports) {
+},{"../../../index":"index.js","./navigationLink.css":"src/components/navigation/navigationLink.css"}],"src/components/header/header.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
@@ -209,7 +209,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getHeader = getHeader;
 var _navigationLink = require("../navigation/navigationLink");
-require("./haeder.css");
+require("./header.css");
 function getHeader() {
   var header = document.createElement("header");
   header.className = "header";
@@ -217,61 +217,82 @@ function getHeader() {
   container.className = "container";
   var nav = document.createElement("div");
   nav.className = "navigation";
-  // nav.innerHTML = `
-  //     <nav class="nav">
-  //         <ul class="header-list">
-  //             <li class="header-item">
-  //                 <a href="${getNavigationLink("/", "Home")}" class="header-link">Home</a>
-  //             </li>
-  //             <li class="header-item">
-  //                 <a href="${getNavigationLink("/about", "About")}" class="header-link">About</a>
-  //             </li>
-  //             <li class="header-item">
-  //                 <a href="${getNavigationLink("/coupons", "Gift Coupons")}" class="header-link">Gift Coupons</a>
-  //             </li>
-  //             <li class="header-item">
-  //                 <a href="${getNavigationLink("/stores", "Stores")}" class="header-link">Stores</a>
-  //             </li>
-  //         </ul>
-  //         <ul class="nav-list">
-  //             <li class="nav-item">
-  //                 <a href="${getNavigationLink("/connect", "Connect")}" class="nav-link">Connect</a>
-  //             </li>
-  //             <li class="nav-item">
-  //                 <a href="${getNavigationLink("/sign", "Sign In")}" class="nav-link">Sign In</a>
-  //             </li>
-  //         </ul>
-  //     </nav>
-  // `;
 
-  var links = {
-    "home": (0, _navigationLink.getNavigationLink)("/", "Home"),
-    "about": (0, _navigationLink.getNavigationLink)("/about", "About"),
-    "coupons": (0, _navigationLink.getNavigationLink)("/coupons", "Gift Coupons"),
-    "stores": (0, _navigationLink.getNavigationLink)("/stores", "Stores"),
-    "connect": (0, _navigationLink.getNavigationLink)("/connect", "Connect"),
-    "sign": (0, _navigationLink.getNavigationLink)("/sign", "Sign In")
+  // Конфигурация навигационных пунктов
+  var navItems = {
+    main: [{
+      id: "home",
+      path: "/",
+      text: "Home"
+    }, {
+      id: "about",
+      path: "/about",
+      text: "About"
+    }, {
+      id: "coupons",
+      path: "/coupons",
+      text: "Gift Coupons"
+    }, {
+      id: "stores",
+      path: "/stores",
+      text: "Stores"
+    }],
+    secondary: [{
+      id: "connect",
+      path: "/connect",
+      text: "Connect"
+    }, {
+      id: "sign",
+      path: "/sign",
+      text: "Sign In"
+    }]
   };
-  for (var oneLink in links) {
-    nav.append(links[oneLink]);
-  }
+
+  // Функция создания списка ссылок
+  var createNavList = function createNavList(items, className) {
+    var ul = document.createElement("ul");
+    ul.className = className;
+    items.forEach(function (item) {
+      var li = document.createElement("li");
+      li.className = "".concat(className.slice(0, -3), "-item");
+      var link = (0, _navigationLink.getNavigationLink)(item.path, item.text);
+      link.className = "".concat(className.slice(0, -3), "-link");
+      link.dataset.navId = item.id;
+      li.appendChild(link);
+      ul.appendChild(li);
+    });
+    return ul;
+  };
+  var mainNavList = createNavList(navItems.main, "header-list");
+  var secondaryNavList = createNavList(navItems.secondary, "nav-list");
+  var navElement = document.createElement("nav");
+  navElement.className = "nav";
+  navElement.appendChild(mainNavList);
+  navElement.appendChild(secondaryNavList);
+  nav.appendChild(navElement);
+
+  // Собираем все ссылки в объект для удобного доступа
+  var links = {};
+  document.querySelectorAll('[data-nav-id]').forEach(function (link) {
+    links[link.dataset.navId] = link;
+  });
   var setActiveLink = function setActiveLink() {
-    var link = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-    for (var _oneLink in links) {
-      links[_oneLink].classList.remove("active");
-    }
-    if (link !== "") {
-      links[link].classList.add("active");
+    var linkId = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+    Object.values(links).forEach(function (link) {
+      link.classList.remove("active");
+    });
+    if (linkId && links[linkId]) {
+      links[linkId].classList.add("active");
     }
   };
-  header.append(container);
-  container.append(nav);
+  header.appendChild(container);
+  container.appendChild(nav);
   return {
     header: header,
     setActiveLink: setActiveLink
   };
 }
-},{"../navigation/navigationLink":"src/components/navigation/navigationLink.js","./haeder.css":"src/components/header/haeder.css"}],"src/images/header-img-1.png":[function(require,module,exports) {
+},{"../navigation/navigationLink":"src/components/navigation/navigationLink.js","./header.css":"src/components/header/header.css"}],"src/images/header-img-1.png":[function(require,module,exports) {
 module.exports = "/header-img-1.9fb817f5.png";
 },{}],"src/images/header-img-2.png":[function(require,module,exports) {
 module.exports = "/header-img-2.fa6cb24d.png";
@@ -453,7 +474,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54298" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55130" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
