@@ -14,7 +14,7 @@ export function getMainPage()
     const innerMain = document.createElement("div");
     innerMain.className = "inner-main"
     innerMain.innerHTML = `
-        <div class="inner">
+        <div class="main-inner">
             <div class="content">
                 <img class="content-img" src="${headerImg_1}" alt="">
                 <img class="content-img" src="${headerImg_2}" alt="">
