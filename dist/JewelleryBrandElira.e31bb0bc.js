@@ -172,7 +172,32 @@ function reloadCSS() {
   }, 50);
 }
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/components/header/haeder.css":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/components/navigation/navigationLink.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/navigation/navigationLink.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getNavigationLink = getNavigationLink;
+var _index = require("../../../index");
+require("./navigationLink.css");
+function getNavigationLink(path) {
+  var title = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+  var link = document.createElement("a");
+  link.className = "link";
+  link.href = path;
+  link.textContent = title;
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+    _index.router.navigate(path);
+  });
+  return link;
+}
+},{"../../../index":"index.js","./navigationLink.css":"src/components/navigation/navigationLink.css"}],"src/components/header/haeder.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
@@ -183,6 +208,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.getHeader = getHeader;
+var _navigationLink = require("../navigation/navigationLink");
 require("./haeder.css");
 function getHeader() {
   var header = document.createElement("header");
@@ -192,11 +218,34 @@ function getHeader() {
   var nav = document.createElement("div");
   nav.className = "navigation";
   nav.innerHTML = "\n        <nav class=\"nav\">\n            <ul class=\"header-list\">\n                <li class=\"header-item\">\n                    <a href=\"/\" class=\"header-link\">Home</a>\n                </li>\n                <li class=\"header-item\">\n                    <a href=\"/about\" class=\"header-link\">About</a>\n                </li>\n                <li class=\"header-item\">\n                    <a href=\"/coupons\" class=\"header-link\">Gift Coupons</a>\n                </li>\n                <li class=\"header-item\">\n                    <a href=\"/stores\" class=\"header-link\">Stores</a>\n                </li>\n            </ul>\n            <ul class=\"nav-list\">\n                <li class=\"nav-item\">\n                    <a href=\"/connect\" class=\"nav-link\">Connect</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a href=\"/sign\" class=\"nav-link\">Sign In</a>\n                </li>\n            </ul>\n        </nav>\n    ";
+  var links = {
+    "home": (0, _navigationLink.getNavigationLink)("/"),
+    "about": (0, _navigationLink.getNavigationLink)("/about"),
+    "coupons": (0, _navigationLink.getNavigationLink)("/coupons"),
+    "stores": (0, _navigationLink.getNavigationLink)("/stores"),
+    "connect": (0, _navigationLink.getNavigationLink)("/connect"),
+    "sign": (0, _navigationLink.getNavigationLink)("/sign")
+  };
+  for (var oneLink in links) {
+    nav.append(links[oneLink]);
+  }
+  var setActiveLink = function setActiveLink() {
+    var link = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+    for (var _oneLink in links) {
+      links[_oneLink].classList.remove("active");
+    }
+    if (link !== "") {
+      links[link].classList.add("active");
+    }
+  };
   header.append(container);
   container.append(nav);
-  return header;
+  return {
+    header: header,
+    setActiveLink: setActiveLink
+  };
 }
-},{"./haeder.css":"src/components/header/haeder.css"}],"src/images/header-img-1.png":[function(require,module,exports) {
+},{"../navigation/navigationLink":"src/components/navigation/navigationLink.js","./haeder.css":"src/components/header/haeder.css"}],"src/images/header-img-1.png":[function(require,module,exports) {
 module.exports = "/header-img-1.9fb817f5.png";
 },{}],"src/images/header-img-2.png":[function(require,module,exports) {
 module.exports = "/header-img-2.fa6cb24d.png";
@@ -327,6 +376,7 @@ router.on("/", /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(func
         moduleMain = _context.v;
         pageMain = moduleMain.getMainPage();
         main.append(pageMain);
+        header.setActiveLink("home");
       case 2:
         return _context.a(2);
     }
@@ -344,13 +394,14 @@ router.on("/about", /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m
         moduleAbout = _context2.v;
         pageAbout = moduleAbout.getAboutPage();
         main.append(pageAbout);
+        header.setActiveLink("about");
       case 2:
         return _context2.a(2);
     }
   }, _callee2);
 })));
 router.resolve();
-app.append(header, main);
+app.append(header.header, main);
 },{"navigo":"node_modules/navigo/lib/navigo.min.js","./src/components/header/header":"src/components/header/header.js","./src/pages/mainPage":"src/pages/mainPage.js","_bundle_loader":"node_modules/parcel-bundler/src/builtins/bundle-loader.js","./src/pages/mainPage.js":[["JewelleryBrandElira.e31bb0bc.js","index.js"],"JewelleryBrandElira.e31bb0bc.js.map","JewelleryBrandElira.e31bb0bc.css",["header-img-1.9fb817f5.png","src/images/header-img-1.png"],["header-img-2.fa6cb24d.png","src/images/header-img-2.png"],["bag.2a38f833.svg","src/images/bag.svg"],"src/pages/mainPage.js"],"./src/pages/aboutPage/aboutPage.js":[["aboutPage.0dfae68e.js","src/pages/aboutPage/aboutPage.js"],"aboutPage.0dfae68e.js.map",["main-img.5f6e0d09.png","src/images/main-img.png"],"aboutPage.0dfae68e.css","src/pages/aboutPage/aboutPage.js"]}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -376,7 +427,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65393" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49465" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

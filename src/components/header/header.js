@@ -1,3 +1,4 @@
+import { getNavigationLink } from "../navigation/navigationLink";
 import "./haeder.css";
 
 export function getHeader()
@@ -37,8 +38,37 @@ export function getHeader()
         </nav>
     `;
 
+    const links = {
+        "home": getNavigationLink("/"),
+        "about": getNavigationLink("/about"),
+        "coupons": getNavigationLink("/coupons"),
+        "stores": getNavigationLink("/stores"),
+        "connect": getNavigationLink("/connect"),
+        "sign": getNavigationLink("/sign")
+    }
+
+    for (const oneLink in links) 
+    {
+        nav.append(links[oneLink]);
+    }
+    
+    const setActiveLink = function (link = "") 
+    {
+        for (const oneLink in links) 
+        {
+            links[oneLink].classList.remove("active");
+        }
+        if (link !== "") 
+        {
+            links[link].classList.add("active");
+        }
+    }
+
     header.append(container);
     container.append(nav);
 
-    return header;
+    return {
+        header,
+        setActiveLink
+    }
 }

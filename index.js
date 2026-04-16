@@ -16,6 +16,7 @@ router.on("/", async () => {
     const moduleMain = await import("./src/pages/mainPage.js");
     const pageMain = moduleMain.getMainPage();
     main.append(pageMain);
+    header.setActiveLink("home");
 });
 
 router.on("/about", async () => {
@@ -23,9 +24,10 @@ router.on("/about", async () => {
     const moduleAbout = await import("./src/pages/aboutPage/aboutPage.js");
     const pageAbout = moduleAbout.getAboutPage();
     main.append(pageAbout);
+    header.setActiveLink("about");
 });
 
 
 router.resolve();
 
-app.append(header, main);
+app.append(header.header, main);
