@@ -39,12 +39,12 @@ export function getHeader()
     `;
 
     const links = {
-        "home": getNavigationLink("/"),
-        "about": getNavigationLink("/about"),
-        "coupons": getNavigationLink("/coupons"),
-        "stores": getNavigationLink("/stores"),
-        "connect": getNavigationLink("/connect"),
-        "sign": getNavigationLink("/sign")
+        "home": getNavigationLink("/", "Home"),
+        "about": getNavigationLink("/about", "About"),
+        "coupons": getNavigationLink("/coupons", "Gift Coupons"),
+        "stores": getNavigationLink("/stores", "Stores"),
+        "connect": getNavigationLink("/connect", "Connect"),
+        "sign": getNavigationLink("/sign", "Sign In")
     }
 
     for (const oneLink in links) 
