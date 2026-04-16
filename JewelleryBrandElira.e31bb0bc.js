@@ -447,9 +447,27 @@ router.on("/about", /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m
     }
   }, _callee2);
 })));
+router.on("/coupons", /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3() {
+  var moduleCoupons, pageCoupons;
+  return _regenerator().w(function (_context3) {
+    while (1) switch (_context3.n) {
+      case 0:
+        main.innerHTML = "";
+        _context3.n = 1;
+        return require("_bundle_loader")(require.resolve("./src/pages/couponsPage/couponsPage.js"));
+      case 1:
+        moduleCoupons = _context3.v;
+        pageCoupons = moduleCoupons.getCouponsPage();
+        main.append(pageCoupons);
+        header.setActiveLink("coupons");
+      case 2:
+        return _context3.a(2);
+    }
+  }, _callee3);
+})));
 router.resolve();
 app.append(header.header, main);
-},{"navigo":"node_modules/navigo/lib/navigo.min.js","./src/components/header/header":"src/components/header/header.js","./src/pages/mainPage":"src/pages/mainPage.js","_bundle_loader":"node_modules/parcel-bundler/src/builtins/bundle-loader.js","./src/pages/mainPage.js":[["JewelleryBrandElira.e31bb0bc.js","index.js"],"JewelleryBrandElira.e31bb0bc.js.map","JewelleryBrandElira.e31bb0bc.css",["header-img-1.9fb817f5.png","src/images/header-img-1.png"],["header-img-2.fa6cb24d.png","src/images/header-img-2.png"],["bag.2a38f833.svg","src/images/bag.svg"],"src/pages/mainPage.js"],"./src/pages/aboutPage/aboutPage.js":[["aboutPage.0dfae68e.js","src/pages/aboutPage/aboutPage.js"],"aboutPage.0dfae68e.js.map",["main-img.5f6e0d09.png","src/images/main-img.png"],"aboutPage.0dfae68e.css","src/pages/aboutPage/aboutPage.js"]}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"navigo":"node_modules/navigo/lib/navigo.min.js","./src/components/header/header":"src/components/header/header.js","./src/pages/mainPage":"src/pages/mainPage.js","_bundle_loader":"node_modules/parcel-bundler/src/builtins/bundle-loader.js","./src/pages/mainPage.js":[["JewelleryBrandElira.e31bb0bc.js","index.js"],"JewelleryBrandElira.e31bb0bc.js.map","JewelleryBrandElira.e31bb0bc.css",["header-img-1.9fb817f5.png","src/images/header-img-1.png"],["header-img-2.fa6cb24d.png","src/images/header-img-2.png"],["bag.2a38f833.svg","src/images/bag.svg"],"src/pages/mainPage.js"],"./src/pages/aboutPage/aboutPage.js":[["aboutPage.0dfae68e.js","src/pages/aboutPage/aboutPage.js"],"aboutPage.0dfae68e.js.map",["main-img.5f6e0d09.png","src/images/main-img.png"],"aboutPage.0dfae68e.css","src/pages/aboutPage/aboutPage.js"],"./src/pages/couponsPage/couponsPage.js":[["couponsPage.62778ff3.js","src/pages/couponsPage/couponsPage.js"],"couponsPage.62778ff3.js.map",["collection-img-1.eaa07269.png","src/images/collection-img-1.png"],["collection-img-2.8221cbe5.png","src/images/collection-img-2.png"],"couponsPage.62778ff3.css","src/pages/couponsPage/couponsPage.js"]}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -474,7 +492,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55130" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56008" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
