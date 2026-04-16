@@ -117,38 +117,38 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/images/collection-img-1.png":[function(require,module,exports) {
-module.exports = "/collection-img-1.eaa07269.png";
-},{}],"src/images/collection-img-2.png":[function(require,module,exports) {
-module.exports = "/collection-img-2.8221cbe5.png";
-},{}],"src/pages/couponsPage/couponsPage.css":[function(require,module,exports) {
+})({"src/images/arrivals-img-1.png":[function(require,module,exports) {
+module.exports = "/arrivals-img-1.ed42d802.png";
+},{}],"src/images/arrivals-img-2.png":[function(require,module,exports) {
+module.exports = "/arrivals-img-2.3ecfb564.png";
+},{}],"src/pages/connectPage/connectPage.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/couponsPage/couponsPage.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/connectPage/connectPage.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getCouponsPage = getCouponsPage;
-var _collectionImg = _interopRequireDefault(require("../../images/collection-img-1.png"));
-var _collectionImg2 = _interopRequireDefault(require("../../images/collection-img-2.png"));
-require("./couponsPage.css");
+exports.getConnectPage = getConnectPage;
+var _arrivalsImg = _interopRequireDefault(require("../../images/arrivals-img-1.png"));
+var _arrivalsImg2 = _interopRequireDefault(require("../../images/arrivals-img-2.png"));
+require("./connectPage.css");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-function getCouponsPage() {
+function getConnectPage() {
   var section = document.createElement("section");
-  section.className = "section-coupons";
+  section.className = "section-connect";
   var container = document.createElement("div");
   container.className = "container";
-  var couponsBlock = document.createElement("div");
-  couponsBlock.className = "coupons-block";
-  couponsBlock.innerHTML = "\n        <div class=\"header-content\"></div>\n        <div class=\"collection\">\n            <div class=\"collection-content\">\n                <h2 class=\"collection-title\">Dive into our everyday wear collection</h2>\n                <p class=\"collection-text\">See More</p>\n            </div>\n            <div class=\"collection-block\">\n                <div class=\"collection-box\">\n                    <img class=\"collection-img images1\" src=\"".concat(_collectionImg.default, "\" alt=\"\">\n                    <span>Earrings</span>\n                </div>\n                <div class=\"collection-box\">\n                    <img class=\"collection-img images2\" src=\"").concat(_collectionImg2.default, "\" alt=\"\">\n                    <span>Necklaces</span>\n                </div>\n            </div>\n        </div>\n    ");
+  var connectBlock = document.createElement("div");
+  connectBlock.className = "connect-block";
+  connectBlock.innerHTML = "\n        <div class=\"header-content\"></div>\n        <div class=\"arrivals-block\">\n            <div class=\"arrivals-box\">\n                <h2 class=\"arrivals-title\">Exolore New Arrivals</h2>\n                <p class=\"arrivals-text\">See More</p>\n            </div>\n            <div class=\"arrivals-box-img\">\n                <img class=\"arrivals-img-1\" src=\"".concat(_arrivalsImg.default, "\" alt=\"\">\n                <img class=\"arrivals-img-2\" src=\"").concat(_arrivalsImg2.default, "\" alt=\"\">\n                <div class=\"hoops\">\n                    <h3 class=\"hoops-title\">Perfect Hoops</h3>\n                    <button class=\"hoops-btn\" type=\"button\">Buy Now</button>\n                </div>\n            </div>\n            <p class=\"arrivals_text\">Simple thick small/medium sized gold hoops for everyday wear</p>\n        </div>\n    ");
   section.append(container);
-  container.append(couponsBlock);
+  container.append(connectBlock);
   return section;
 }
-},{"../../images/collection-img-1.png":"src/images/collection-img-1.png","../../images/collection-img-2.png":"src/images/collection-img-2.png","./couponsPage.css":"src/pages/couponsPage/couponsPage.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../../images/arrivals-img-1.png":"src/images/arrivals-img-1.png","../../images/arrivals-img-2.png":"src/images/arrivals-img-2.png","./connectPage.css":"src/pages/connectPage/connectPage.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -318,4 +318,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/couponsPage.62778ff3.js.map
+//# sourceMappingURL=/connectPage.90a10cb0.js.map
