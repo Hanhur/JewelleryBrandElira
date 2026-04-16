@@ -501,9 +501,27 @@ router.on("/connect", /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator()
     }
   }, _callee5);
 })));
+router.on("/sign", /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee6() {
+  var moduleSign, pageSign;
+  return _regenerator().w(function (_context6) {
+    while (1) switch (_context6.n) {
+      case 0:
+        main.innerHTML = "";
+        _context6.n = 1;
+        return require("_bundle_loader")(require.resolve("./src/pages/signPage/signPage.js"));
+      case 1:
+        moduleSign = _context6.v;
+        pageSign = moduleSign.getSignPage();
+        main.append(pageSign);
+        header.setActiveLink("sign");
+      case 2:
+        return _context6.a(2);
+    }
+  }, _callee6);
+})));
 router.resolve();
 app.append(header.header, main);
-},{"navigo":"node_modules/navigo/lib/navigo.min.js","./src/components/header/header":"src/components/header/header.js","./src/pages/mainPage":"src/pages/mainPage.js","_bundle_loader":"node_modules/parcel-bundler/src/builtins/bundle-loader.js","./src/pages/mainPage.js":[["JewelleryBrandElira.e31bb0bc.js","index.js"],"JewelleryBrandElira.e31bb0bc.js.map","JewelleryBrandElira.e31bb0bc.css",["header-img-1.9fb817f5.png","src/images/header-img-1.png"],["header-img-2.fa6cb24d.png","src/images/header-img-2.png"],["bag.2a38f833.svg","src/images/bag.svg"],"src/pages/mainPage.js"],"./src/pages/aboutPage/aboutPage.js":[["aboutPage.0dfae68e.js","src/pages/aboutPage/aboutPage.js"],"aboutPage.0dfae68e.js.map",["main-img.5f6e0d09.png","src/images/main-img.png"],"aboutPage.0dfae68e.css","src/pages/aboutPage/aboutPage.js"],"./src/pages/couponsPage/couponsPage.js":[["couponsPage.62778ff3.js","src/pages/couponsPage/couponsPage.js"],"couponsPage.62778ff3.js.map",["collection-img-1.eaa07269.png","src/images/collection-img-1.png"],["collection-img-2.8221cbe5.png","src/images/collection-img-2.png"],"couponsPage.62778ff3.css","src/pages/couponsPage/couponsPage.js"],"./src/pages/storesPage/storesPage.js":[["storesPage.82797360.js","src/pages/storesPage/storesPage.js"],"storesPage.82797360.js.map",["make-img-1.15a27dd8.png","src/images/make-img-1.png"],["make-img-2.978dce46.png","src/images/make-img-2.png"],"storesPage.82797360.css","src/pages/storesPage/storesPage.js"],"./src/pages/connectPage/connectPage.js":[["connectPage.90a10cb0.js","src/pages/connectPage/connectPage.js"],"connectPage.90a10cb0.js.map",["arrivals-img-1.ed42d802.png","src/images/arrivals-img-1.png"],["arrivals-img-2.3ecfb564.png","src/images/arrivals-img-2.png"],"connectPage.90a10cb0.css","src/pages/connectPage/connectPage.js"]}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"navigo":"node_modules/navigo/lib/navigo.min.js","./src/components/header/header":"src/components/header/header.js","./src/pages/mainPage":"src/pages/mainPage.js","_bundle_loader":"node_modules/parcel-bundler/src/builtins/bundle-loader.js","./src/pages/mainPage.js":[["JewelleryBrandElira.e31bb0bc.js","index.js"],"JewelleryBrandElira.e31bb0bc.js.map","JewelleryBrandElira.e31bb0bc.css",["header-img-1.9fb817f5.png","src/images/header-img-1.png"],["header-img-2.fa6cb24d.png","src/images/header-img-2.png"],["bag.2a38f833.svg","src/images/bag.svg"],"src/pages/mainPage.js"],"./src/pages/aboutPage/aboutPage.js":[["aboutPage.0dfae68e.js","src/pages/aboutPage/aboutPage.js"],"aboutPage.0dfae68e.js.map",["main-img.5f6e0d09.png","src/images/main-img.png"],"aboutPage.0dfae68e.css","src/pages/aboutPage/aboutPage.js"],"./src/pages/couponsPage/couponsPage.js":[["couponsPage.62778ff3.js","src/pages/couponsPage/couponsPage.js"],"couponsPage.62778ff3.js.map",["collection-img-1.eaa07269.png","src/images/collection-img-1.png"],["collection-img-2.8221cbe5.png","src/images/collection-img-2.png"],"couponsPage.62778ff3.css","src/pages/couponsPage/couponsPage.js"],"./src/pages/storesPage/storesPage.js":[["storesPage.82797360.js","src/pages/storesPage/storesPage.js"],"storesPage.82797360.js.map",["make-img-1.15a27dd8.png","src/images/make-img-1.png"],["make-img-2.978dce46.png","src/images/make-img-2.png"],"storesPage.82797360.css","src/pages/storesPage/storesPage.js"],"./src/pages/connectPage/connectPage.js":[["connectPage.90a10cb0.js","src/pages/connectPage/connectPage.js"],"connectPage.90a10cb0.js.map",["arrivals-img-1.ed42d802.png","src/images/arrivals-img-1.png"],["arrivals-img-2.3ecfb564.png","src/images/arrivals-img-2.png"],"connectPage.90a10cb0.css","src/pages/connectPage/connectPage.js"],"./src/pages/signPage/signPage.js":[["signPage.f96fac7d.js","src/pages/signPage/signPage.js"],"signPage.f96fac7d.js.map",["forbes.4e581cc4.png","src/images/forbes.png"],["elle.9b9ca02e.png","src/images/elle.png"],["vogue.e247b380.png","src/images/vogue.png"],["pinterest.49598fe4.png","src/images/pinterest.png"],["instagram.5727c175.png","src/images/instagram.png"],["facebook.72f9ce01.png","src/images/facebook.png"],["twitter.8ca883f5.png","src/images/twitter.png"],["chevron.450016b9.svg","src/images/chevron.svg"],"signPage.f96fac7d.css","src/pages/signPage/signPage.js"]}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -528,7 +546,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60435" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61112" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -3,7 +3,6 @@ import Navigo from "navigo";
 import { getHeader } from "./src/components/header/header";
 import { getMainPage } from "./src/pages/mainPage";
 
-
 const app = document.querySelector("#app");
 
 export const router = new Navigo("/");
@@ -51,6 +50,13 @@ router.on("/connect", async () => {
     header.setActiveLink("connect");
 });
 
+router.on("/sign", async () => {
+    main.innerHTML = "";
+    const moduleSign = await import("./src/pages/signPage/signPage.js");
+    const pageSign = moduleSign.getSignPage();
+    main.append(pageSign);
+    header.setActiveLink("sign");
+});
 
 router.resolve();
 
