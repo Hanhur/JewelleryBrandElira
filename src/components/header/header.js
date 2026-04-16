@@ -15,24 +15,24 @@ export function getHeader()
         <nav class="nav">
             <ul class="header-list">
                 <li class="header-item">
-                    <a href="${getNavigationLink("/")}" class="header-link">Home</a>
+                    <a href="${getNavigationLink("/", "Home")}" class="header-link">Home</a>
                 </li>
                 <li class="header-item">
-                    <a href="${getNavigationLink("/about")}" class="header-link">About</a>
+                    <a href="${getNavigationLink("/about", "About")}" class="header-link">About</a>
                 </li>
                 <li class="header-item">
-                    <a href="${getNavigationLink("/coupons")}" class="header-link">Gift Coupons</a>
+                    <a href="${getNavigationLink("/coupons", "Gift Coupons")}" class="header-link">Gift Coupons</a>
                 </li>
                 <li class="header-item">
-                    <a href="${getNavigationLink("/stores")}" class="header-link">Stores</a>
+                    <a href="${getNavigationLink("/stores", "Stores")}" class="header-link">Stores</a>
                 </li>
             </ul>
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="${getNavigationLink("/connect")}" class="nav-link">Connect</a>
+                    <a href="${getNavigationLink("/connect", "Connect")}" class="nav-link">Connect</a>
                 </li>
                 <li class="nav-item">
-                    <a href="${getNavigationLink("/sign")}" class="nav-link">Sign In</a>
+                    <a href="${getNavigationLink("/sign", "Sign In")}" class="nav-link">Sign In</a>
                 </li>
             </ul>
         </nav>
