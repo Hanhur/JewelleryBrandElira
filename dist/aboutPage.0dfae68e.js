@@ -134,8 +134,8 @@ var _mainImg = _interopRequireDefault(require("../../images/main-img.png"));
 require("./aboutPage.css");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function getAboutPage() {
-  var section = document.createElement("section-about");
-  section.className = "about-inner";
+  var section = document.createElement("section");
+  section.className = "section-about";
   var container = document.createElement("div");
   container.className = "container";
   var aboutContent = document.createElement("div");
@@ -170,7 +170,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55130" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56008" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

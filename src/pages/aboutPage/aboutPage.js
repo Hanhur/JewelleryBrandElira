@@ -3,8 +3,8 @@ import "./aboutPage.css";
 
 export function getAboutPage()
 {
-    const section = document.createElement("section-about");
-    section.className = "about-inner";
+    const section = document.createElement("section");
+    section.className = "section-about";
      
     const container = document.createElement("div");
     container.className = "container";

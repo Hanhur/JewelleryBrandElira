@@ -27,6 +27,14 @@ router.on("/about", async () => {
     header.setActiveLink("about");
 });
 
+router.on("/coupons", async () => {
+    main.innerHTML = "";
+    const moduleCoupons = await import("./src/pages/couponsPage/couponsPage.js");
+    const pageCoupons = moduleCoupons.getCouponsPage();
+    main.append(pageCoupons);
+    header.setActiveLink("coupons");
+});
+
 
 router.resolve();
 

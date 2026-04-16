@@ -117,62 +117,38 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-  return bundleURL;
-}
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-  return '/';
-}
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-function updateLink(link) {
-  var newLink = link.cloneNode();
-  newLink.onload = function () {
-    link.remove();
-  };
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-var cssTimeout = null;
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-    cssTimeout = null;
-  }, 50);
-}
-module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/css/reset.css":[function(require,module,exports) {
+})({"src/images/collection-img-1.png":[function(require,module,exports) {
+module.exports = "/collection-img-1.eaa07269.png";
+},{}],"src/images/collection-img-2.png":[function(require,module,exports) {
+module.exports = "/collection-img-2.8221cbe5.png";
+},{}],"src/pages/couponsPage/couponsPage.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/couponsPage/couponsPage.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getCouponsPage = getCouponsPage;
+var _collectionImg = _interopRequireDefault(require("../../images/collection-img-1.png"));
+var _collectionImg2 = _interopRequireDefault(require("../../images/collection-img-2.png"));
+require("./couponsPage.css");
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function getCouponsPage() {
+  var section = document.createElement("section");
+  section.className = "section-coupons";
+  var container = document.createElement("div");
+  container.className = "container";
+  var couponsBlock = document.createElement("div");
+  couponsBlock.className = "coupons-block";
+  couponsBlock.innerHTML = "\n        <div class=\"header-content\"></div>\n        <div class=\"collection\">\n            <div class=\"collection-content\">\n                <h2 class=\"collection-title\">Dive into our everyday wear collection</h2>\n                <p class=\"collection-text\">See More</p>\n            </div>\n            <div class=\"collection-block\">\n                <div class=\"collection-box\">\n                    <img class=\"collection-img images1\" src=\"".concat(_collectionImg.default, "\" alt=\"\">\n                    <span>Earrings</span>\n                </div>\n                <div class=\"collection-box\">\n                    <img class=\"collection-img images2\" src=\"").concat(_collectionImg2.default, "\" alt=\"\">\n                    <span>Necklaces</span>\n                </div>\n            </div>\n        </div>\n    ");
+  section.append(container);
+  container.append(couponsBlock);
+  return section;
+}
+},{"../../images/collection-img-1.png":"src/images/collection-img-1.png","../../images/collection-img-2.png":"src/images/collection-img-2.png","./couponsPage.css":"src/pages/couponsPage/couponsPage.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -342,4 +318,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/reset.b119aee4.js.map
+//# sourceMappingURL=/couponsPage.62778ff3.js.map
