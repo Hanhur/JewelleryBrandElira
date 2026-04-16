@@ -1,0 +1,19 @@
+.nav 
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 45px;
+    background-color: var(--color-header);
+}
+.header-list,
+.nav-list
+{
+    display: flex;
+    gap: 0 45px;
+    list-style-type: none;
+}
+.header-link,
+.nav-link
+{
+    text-decoration: none;
+}
