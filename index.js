@@ -35,6 +35,14 @@ router.on("/coupons", async () => {
     header.setActiveLink("coupons");
 });
 
+router.on("/stores", async () => {
+    main.innerHTML = "";
+    const moduleStores = await import("./src/pages/storesPage/storesPage.js");
+    const pageStores = moduleStores.getSrotesPage();
+    main.append(pageStores);
+    header.setActiveLink("stores");
+});
+
 
 router.resolve();
 
