@@ -315,26 +315,43 @@ var app = document.querySelector("#app");
 var router = exports.router = new _navigo.default("/");
 var header = (0, _header.getHeader)();
 var main = (0, _mainPage.getMainPage)();
-router.on("/about", /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
-  var moduleAbout, pageAbout;
+router.on("/", /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+  var moduleMain, pageMain;
   return _regenerator().w(function (_context) {
     while (1) switch (_context.n) {
       case 0:
         main.innerHTML = "";
         _context.n = 1;
-        return require("_bundle_loader")(require.resolve("./src/pages/aboutPage/aboutPage.js"));
+        return require("_bundle_loader")(require.resolve("./src/pages/mainPage.js"));
       case 1:
-        moduleAbout = _context.v;
-        pageAbout = moduleAbout.getAboutPage();
-        main.append(pageAbout);
+        moduleMain = _context.v;
+        pageMain = moduleMain.getMainPage();
+        main.append(pageMain);
       case 2:
         return _context.a(2);
     }
   }, _callee);
 })));
+router.on("/about", /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
+  var moduleAbout, pageAbout;
+  return _regenerator().w(function (_context2) {
+    while (1) switch (_context2.n) {
+      case 0:
+        main.innerHTML = "";
+        _context2.n = 1;
+        return require("_bundle_loader")(require.resolve("./src/pages/aboutPage/aboutPage.js"));
+      case 1:
+        moduleAbout = _context2.v;
+        pageAbout = moduleAbout.getAboutPage();
+        main.append(pageAbout);
+      case 2:
+        return _context2.a(2);
+    }
+  }, _callee2);
+})));
 router.resolve();
 app.append(header, main);
-},{"navigo":"node_modules/navigo/lib/navigo.min.js","./src/components/header/header":"src/components/header/header.js","./src/pages/mainPage":"src/pages/mainPage.js","_bundle_loader":"node_modules/parcel-bundler/src/builtins/bundle-loader.js","./src/pages/aboutPage/aboutPage.js":[["aboutPage.0dfae68e.js","src/pages/aboutPage/aboutPage.js"],"aboutPage.0dfae68e.js.map",["main-img.5f6e0d09.png","src/images/main-img.png"],"aboutPage.0dfae68e.css","src/pages/aboutPage/aboutPage.js"]}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"navigo":"node_modules/navigo/lib/navigo.min.js","./src/components/header/header":"src/components/header/header.js","./src/pages/mainPage":"src/pages/mainPage.js","_bundle_loader":"node_modules/parcel-bundler/src/builtins/bundle-loader.js","./src/pages/mainPage.js":[["JewelleryBrandElira.e31bb0bc.js","index.js"],"JewelleryBrandElira.e31bb0bc.js.map","JewelleryBrandElira.e31bb0bc.css",["header-img-1.9fb817f5.png","src/images/header-img-1.png"],["header-img-2.fa6cb24d.png","src/images/header-img-2.png"],["bag.2a38f833.svg","src/images/bag.svg"],"src/pages/mainPage.js"],"./src/pages/aboutPage/aboutPage.js":[["aboutPage.0dfae68e.js","src/pages/aboutPage/aboutPage.js"],"aboutPage.0dfae68e.js.map",["main-img.5f6e0d09.png","src/images/main-img.png"],"aboutPage.0dfae68e.css","src/pages/aboutPage/aboutPage.js"]}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -359,7 +376,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60050" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65393" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
