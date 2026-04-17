@@ -222,7 +222,7 @@ function getHeader() {
   var navItems = {
     main: [{
       id: "home",
-      path: "/",
+      path: "/home",
       text: "Home"
     }, {
       id: "about",
@@ -321,7 +321,7 @@ function getMainPage() {
   container.className = "container";
   var innerMain = document.createElement("div");
   innerMain.className = "inner-main";
-  innerMain.innerHTML = "\n        <div class=\"main-inner\">\n            <div class=\"content\">\n                <img class=\"content-img\" src=\"".concat(_headerImg.default, "\" alt=\"\">\n                <img class=\"content-img\" src=\"").concat(_headerImg2.default, "\" alt=\"\">\n                <div class=\"content-box\">\n                    <h1 class=\"content-title\">E L I R A</h1>\n                    <p class=\"content-text\">We add elegance to your freedom</p>\n                    <button class=\"content-box-btn\" type=\"button\">\n                        Shop Now\n                        <img src=\"").concat(_bag.default, "\" alt=\"\" width=\"30\">\n                    </button>\n                </div>\n            </div>\n        </div>\n    ");
+  innerMain.innerHTML = "\n        <div class=\"main-inner\">\n            <div class=\"content\">\n                <img class=\"content_img\" src=\"".concat(_headerImg.default, "\" alt=\"\">\n                <img class=\"content_img\" src=\"").concat(_headerImg2.default, "\" alt=\"\">\n                <div class=\"content-box\">\n                    <h1 class=\"content-title\">E L I R A</h1>\n                    <p class=\"content-text\">We add elegance to your freedom</p>\n                    <button class=\"content-box-btn\" type=\"button\">\n                        Shop Now\n                        <img src=\"").concat(_bag.default, "\" alt=\"\" width=\"30\">\n                    </button>\n                </div>\n            </div>\n        </div>\n    ");
   main.append(container);
   container.append(innerMain);
   return main;
@@ -411,7 +411,7 @@ var app = document.querySelector("#app");
 var router = exports.router = new _navigo.default("/");
 var header = (0, _header.getHeader)();
 var main = (0, _mainPage.getMainPage)();
-router.on("/", /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+router.on("/home", /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
   var moduleMain, pageMain;
   return _regenerator().w(function (_context) {
     while (1) switch (_context.n) {
@@ -546,7 +546,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61112" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60373" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

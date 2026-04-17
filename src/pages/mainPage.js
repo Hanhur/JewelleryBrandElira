@@ -16,8 +16,8 @@ export function getMainPage()
     innerMain.innerHTML = `
         <div class="main-inner">
             <div class="content">
-                <img class="content-img" src="${headerImg_1}" alt="">
-                <img class="content-img" src="${headerImg_2}" alt="">
+                <img class="content_img" src="${headerImg_1}" alt="">
+                <img class="content_img" src="${headerImg_2}" alt="">
                 <div class="content-box">
                     <h1 class="content-title">E L I R A</h1>
                     <p class="content-text">We add elegance to your freedom</p>

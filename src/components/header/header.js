@@ -14,7 +14,7 @@ export function getHeader() {
     // Конфигурация навигационных пунктов
     const navItems = {
         main: [
-            { id: "home", path: "/", text: "Home" },
+            { id: "home", path: "/home", text: "Home" },
             { id: "about", path: "/about", text: "About" },
             { id: "coupons", path: "/coupons", text: "Gift Coupons" },
             { id: "stores", path: "/stores", text: "Stores" }

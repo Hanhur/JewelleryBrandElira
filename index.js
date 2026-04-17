@@ -10,7 +10,7 @@ export const router = new Navigo("/");
 const header = getHeader();
 const main = getMainPage();
 
-router.on("/", async () => {
+router.on("/home", async () => {
     main.innerHTML = "";
     const moduleMain = await import("./src/pages/mainPage.js");
     const pageMain = moduleMain.getMainPage();
